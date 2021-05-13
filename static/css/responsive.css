@@ -1,0 +1,187 @@
+/*==============================================================================
+
+ * Template Name: Zulia - Photography Portfolio Template
+ * Template URI: 
+ * Author: ixtheme - (https://themeforest.net/user/ixtheme)
+ * Description: Photography Portfolio Template
+ * Version: 1.0
+ * Copyright 2020 ixtheme
+
+ ==============================================================================*/
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 1200px) {
+	.menu-links li a {
+		font-size: 30px;
+		padding: 0;
+		font-weight: 600;
+	}
+	.nav-button-link {
+		padding: 8px 18px 9px !important;
+	}
+	.menu-box h3 {
+		font-size: 28px;
+	}
+	.menu-box p {
+		margin-bottom: 8px;
+	}
+}
+
+/* Large devices (desktops, 991px and down) */
+@media (max-width: 991px) {
+	.form-wrapper {
+		padding-left: 0 !important;
+		margin-top: 50px;
+	}
+}
+
+/* Large devices (desktops, 991px and down) */
+@media (max-width: 767px) {
+	.menu-wrapper .pl-100 {
+		padding-left: 15px !important;
+		margin-top: 20px;
+	}
+	.menu-box {
+		margin-top: 30px !important;
+	}
+	.menu-wrapper .pl-100::after {
+		height: 1px;
+		width: 100%;
+	}
+	.menu-links li a {
+		font-size: 28px;
+		margin: 14px 0;
+	}
+	.row.project-items {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.row.project-items .col-lg-4 {
+		padding: 0 15px;
+	}
+	.project-item-title {
+		font-size: 26px;
+	}
+	.details-page-header {
+		margin-bottom: 0;
+	}
+	.section-header.pl-100 {
+		padding-left: 0 !important;
+	}
+	.contact-info-wrap {
+		padding-left: 0 !important;
+	}
+	.details-images .gallery-item {
+		margin-top: 30px;
+	}
+	.details-navigation.mt-80 {
+		margin-top: 50px !important;
+	}
+
+	.landing-content-2 .slider-info {
+		margin-left: 0;
+	}
+	.about-wrapper .mt-70 {
+		margin-top: 50px !important;
+	}
+	.mt-80.text-center {
+		margin-top: 50px !important;
+	}
+}
+
+/* Small devices (mobile, 575px and down) */
+@media (max-width: 575px) {
+	.logo img {
+		max-width: 130px;
+		width: 100%;
+	}
+    .container-huk {
+		padding: 0 15px;
+	}
+	.menu-wrapper .pl-100 {
+		display: none;
+	}
+	.menu-wrapper {
+		padding-top: 60px;
+		text-align: center;
+	}
+	.menu-links li a {
+		font-size: 25px;
+		font-weight: 300;
+	}
+	.slider-info h3 {
+		font-size: 42px;
+	}
+	.slider-info {
+		left: 0;
+	}
+	header {
+		height: 100px;
+	}
+	.landing-content .navigator {
+		bottom: 15px;
+	}
+	.navigator-link {
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	.landing-content .swiper-pagination {
+		margin-left: 0;
+		margin-top: 5px;
+	}
+	.navigator-link::after {
+		display: none;
+	}
+	.menu-links li a::before {
+		display: none;
+	}
+	.page-wrapper {
+		padding: 60px 0;
+	}
+	.contact-img {
+		display: none;
+	}
+
+	.landing-content-2 .slider-info h3 {
+		font-size: 52px;
+	}
+	.copyright-text i {
+		display: block;
+	}
+	.loader-title {
+		font-size: 32px;
+	}
+	.about-info h3 {
+		font-size: 22px;
+		font-weight: 300;
+	}
+	.copyright-text {
+		line-height: 1.5;
+	}
+}
+
+/* extraSmall devices ( 400px and down) */
+@media (max-width: 400px) {
+	.slider-img {
+		display: none;
+	}
+	.slider-info {
+		position: static;
+	}
+	.slider-info .show-sm {
+		display: inline-block;
+		background-color: rgba(0, 0, 0, .6);
+		padding: 4px 12px;
+		margin-top: 15px;
+	}
+	.landing-content .swiper-slide {
+		-ms-flex-pack: start !important;
+		 justify-content: start !important;
+		 padding: 0 15px;
+	}
+	.slider-bg::after {
+		opacity: .5;
+	}
+}
