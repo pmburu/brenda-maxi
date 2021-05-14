@@ -2,7 +2,8 @@ from django.shortcuts import render
 
 from .models import (
     Project,
-    ProjectDetail
+    ProjectDetail,
+    ProjectGallery
 )
 
 # Projects Views
@@ -34,12 +35,17 @@ primary keys and render the project-details.html file.
 
 def project_details(request, project_id):
     template_name = 'project-details.html'
-    details = ProjectDetail.objects.get(pk=project_id)
+
+    # .get() is not iterable -- single ibj, .filter() is iterable -- returns Qs
+    details = ProjectDetail.objects.filter(pk=project_id)
+    project_galleries = ProjectGallery.objects.\
+        filter(project_detail__in=details)
 
     return render(
         request,
         template_name,
         {
-            'details': details
+            'details': details,
+            'project_galleries': project_galleries
         }
     )

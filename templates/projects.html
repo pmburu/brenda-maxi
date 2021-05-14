@@ -20,7 +20,7 @@
                     <div class="project-item wow fadeInUp" data-wow-delay=".1s">
                         <a href="{% url 'project-details' featured.id %}">
                             <div class="project-item-img">
-                                <img class="imgDup" src="{{ MEDIA_URL }}{{ featured.project_feature_image }}" alt="{{ featured.project_name }}">
+                                <img class="imgDup" src="{{ featured.project_feature_image.url }}" alt="{{ featured.project_name }}">
                             </div>
                             <!-- /project-item-img -->
                             <p class="project-item-title">{{ featured.project_name }}
