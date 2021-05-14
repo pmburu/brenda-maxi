@@ -21,7 +21,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-12">
                         <div class="gallery-item">
-                            <a href="" data-effect="mfp-move-horizontal">
+                            <a href="{{ picture.image.url }}" data-effect="mfp-move-horizontal">
                                 <img class="img-fluid" src="{{ picture.image.url }}" alt="">
                             </a>
                         </div>
@@ -36,7 +36,7 @@
                         <a class="prev" href="project-details.html" data-text="prev"><span>🠈</span></a>
                     </div>
                     <div class="col-6 text-center">
-                        <a class="view-all-link" href="projects.html">+</a>
+                        <a class="view-all-link" href="{% url 'projects' %}">+</a>
                     </div>
                     <div class="col-3 text-right">
                         <a class="next" href="project-details.html" data-text="next"><span>🠊</span></a>

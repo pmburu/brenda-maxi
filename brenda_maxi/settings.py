@@ -42,6 +42,12 @@ INSTALLED_APPS = [
 
     'home',
     'projects',
+    'photography',
+    'cinematography',
+
+    # Third Party Libraries
+
+    'embed_video'
 ]
 
 MIDDLEWARE = [
