@@ -10,13 +10,14 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
+                    {% for home_detail in home_details %}
                     <div class="swiper-slide">
-                        <div class="slider-bg" data-bgi="img/slider-img-01.jpg"></div>
+                        <div class="slider-bg" data-bgi="{{ home_detail.home_hero_image }}"></div>
                         <div class="slider-inner">
-                            <a class="project-link" href="project-details.html">
+                            <a class="project-link" href="{% url 'project-details' home_detail.project_id %}">
                                 <div class="slider-info">
-                                    <h3 data-swiper-parallax="-1000">Kill Bill</h3>
-                                    <p data-swiper-parallax="-2000">On a personal note, this is the Tarantino movie that got me hooked on both Tarantino and movies.</p>
+                                    <h3 data-swiper-parallax="-1000">{{ home_detail.project.project_name }}</h3>
+                                    <p data-swiper-parallax="-2000">{{ home_detail.project_detail_description }}</p>
                                     <p class="details-btn" data-swiper-parallax="-3000">
                                         <span>Discover</span>
                                         <i class="fas fa-chevron-right"></i>
@@ -25,47 +26,14 @@
                             </a>
                         </div>
                     </div>
-                    <!-- end of slide-01 -->
-
-                    <div class="swiper-slide">
-                        <div class="slider-bg" data-bgi="img/slider-img-02.jpg"></div>
-                        <div class="slider-inner">
-                            <a class="project-link" href="project-details.html">
-                                <div class="slider-info">
-                                    <h3 data-swiper-parallax="-1000">Guardians</h3>
-                                    <p data-swiper-parallax="-2000">With mind, I am searching for a deeper meaning. Angels, Gods and Spirits - Guardians of us all.</p>
-                                    <p class="details-btn" data-swiper-parallax="-3000">
-                                        <span>Discover</span>
-                                        <i class="fas fa-chevron-right"></i>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end of slide-02 -->
-
-                    <div class="swiper-slide">
-                        <div class="slider-bg" data-bgi="img/slider-img-03.jpg"></div>
-                        <div class="slider-inner">
-                            <a class="project-link" href="project-details.html">
-                                <div class="slider-info">
-                                    <h3 data-swiper-parallax="-1000">The Warrior</h3>
-                                    <p data-swiper-parallax="-2000">That's all about the soldier that loves her violin but she was in the war so she cannot play violin.</p>
-                                    <p class="details-btn" data-swiper-parallax="-3000">
-                                        <span>Discover</span>
-                                        <i class="fas fa-chevron-right"></i>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end of slide-03 -->
+                    {% endfor %}
+                    <!-- end of slides -->
                 </div>
 
                 <div class="container-huk navigator">
                     <div class="row">
                         <div class="col-6">
-                            <a class="navigator-link line-link" href="projects.html">Discover all</a>
+                            <a class="navigator-link line-link" href="{% url 'projects' %}">Discover all</a>
                             <!-- pagination -->
                             <div class="swiper-pagination"></div>
                         </div>
