@@ -130,3 +130,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
 
 MEDIA_ROOT = str(BASE_DIR / 'images')
+# MEDIA_URL = '/images/'
