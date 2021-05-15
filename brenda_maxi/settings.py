@@ -153,7 +153,7 @@ STATIC_ROOT = [BASE_DIR / 'staticfiles']
 
 STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
 
-MEDIA_ROOT = str(BASE_DIR / 'images')
+MEDIA_ROOT = str(BASE_DIR / 'media')
 # MEDIA_URL = '/images/'
 
 
