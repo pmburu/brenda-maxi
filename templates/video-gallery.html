@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %} Videography {% endblock title %}
+
+{% load embed_video_tags %}
+
+{% block content %}
+
+    <div class="page-wrapper gallery-wrapper">
+        <div class="container-huk">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header pl-100 mb-20">
+                        <p>Recent shoots</p>
+                        <h2>Cinemagraphs</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center video-gallery">
+              {% for vid in videos %}
+              {% video vid.video as cinema %}
+                <div class="col-md-4">
+                    <div class="video-item">
+                        <a href="{{ cinema.url }}" class="popup-video">
+                            <img src="{{ cinema.thumbnail }}" alt="{{ vid.vid_caption }}" class="img-fluid">
+                            <p class="play-icon"><span class="fas fa-play"></span></p>
+                        </a>
+                        <p class="caption"><span>{{ vid.vid_caption }}</span></p>
+                    </div>
+                    <!-- /video-item -->
+                </div>
+                {% video cinema.video 'large' %}
+                {% endvideo %}
+                {% endfor %}
+                <div class="col-12">
+                    <div class="mt-80 text-center">
+                        <a class="view-all-link" href="{% url 'videography' %}">+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- gallery-wrapper -->
+
+{% endblock content %}

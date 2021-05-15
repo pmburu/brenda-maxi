@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} Photography {% endblock title %}
+
+{% block content %}
+
+    <div class="page-wrapper gallery-wrapper">
+        <div class="container-huk">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header pl-100 mb-20 wow fadeIn">
+                        <p>Recent shoots</p>
+                        <h2>Photography</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row gallery-items">
+              {% for photo in photos %}
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="gallery-item wow fadeInUp">
+                        <a href="{{ photo.photo.url }}" data-effect="mfp-move-horizontal">
+                            <img class="img-fluid" src="{{ photo.photo.url }}" alt="">
+                        </a>
+                        <p class="caption"><span>{{ photo.photo_caption }}</span></p>
+                    </div>
+                    <!-- /gallery-item -->
+                </div>
+                {% endfor %}
+                <div class="col-12">
+                    <div class="mt-80 text-center">
+                        <a class="view-all-link" href="{% url 'photography' %}">+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- gallery-wrapper -->
+
+{% endblock content %}

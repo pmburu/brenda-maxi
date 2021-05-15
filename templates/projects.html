@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} Projects {% endblock title %}
+
+{% block content %}
+
+    <div class="page-wrapper projects-wrapper">
+        <div class="container-huk">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header pl-100 wow fadeIn">
+                        <p>Selected works</p>
+                        <h2>Featured Projects</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row project-items">
+              {% for featured in featured_projects %}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="project-item wow fadeInUp" data-wow-delay=".1s">
+                        <a href="{% url 'project-details' featured.id %}">
+                            <div class="project-item-img">
+                                <img class="imgDup" src="{{ featured.project_feature_image.url }}" alt="{{ featured.project_name }}">
+                            </div>
+                            <!-- /project-item-img -->
+                            <p class="project-item-title">{{ featured.project_name }}
+                                <span class="mask-text-reveal" data-text="{{ featured.project_name }}"></span>
+                            </p>
+                            <!-- /project-item-title -->
+                        </a>
+                    </div>
+                    <!-- /project-item -->
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- projects-wrapper -->
+
+{% endblock content %}

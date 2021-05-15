@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} Project Detail {% endblock title %}
+
+{% block content %}
+
+    <div class="page-wrapper projects-wrapper">
+        <div class="container">
+          {% for detail in details %}
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="details-page-header">
+                        <h2>{{ detail.project.project_name }}</h2>
+                        <p>{{ detail.project_detail_description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% for picture in project_galleries %}
+            <div class="details-images gallery-items">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-12">
+                        <div class="gallery-item">
+                            <a href="{{ picture.image.url }}" data-effect="mfp-move-horizontal">
+                                <img class="img-fluid" src="{{ picture.image.url }}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- /details-images -->
+            <div class="details-navigation mt-80">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-3">
+                        <a class="prev" href="project-details.html" data-text="prev"><span>🠈</span></a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a class="view-all-link" href="{% url 'projects' %}">+</a>
+                    </div>
+                    <div class="col-3 text-right">
+                        <a class="next" href="project-details.html" data-text="next"><span>🠊</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- /details-navigation -->
+        </div>
+    </div>
+    <!-- projects-wrapper -->
+{% endblock content %}
+
+{% block footer %}
+{% endblock footer %}
