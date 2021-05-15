@@ -27,7 +27,7 @@ SECRET_KEY = '3kqbe-1uembu6i&qwpzk7$d5j1skakeec5753!#7kk@ah4%oub'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://brenda-maxi.herokuapp.com']
 
 
 # Application definition
