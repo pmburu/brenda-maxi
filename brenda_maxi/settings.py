@@ -113,8 +113,8 @@ DATABASES = {
         'NAME': 'brenda_maxi',
         'USER': 'brenda_maxi',
         'PASSWORD': 'brenda_maxi',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': '127.0.0.1',
+        'PORT': 5432,
     }
 }
 
@@ -157,49 +157,51 @@ USE_TZ = True
 
 
 # aws settings
+# AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+# AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'CacheControl': 'max-age=86400',
+# }
+# AWS_LOCATION = 'static'
+# #
+# # STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# USE_S3 = env('USE_S3') == 'TRUE'
+
+# if USE_S3:
+
+# aws settings
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-AWS_LOCATION = 'static'
-
-STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
-# AWS_ACCESS_KEY_ID = ''
-# AWS_SECRET_ACCESS_KEY = ''
-# AWS_STORAGE_BUCKET_NAME = ''
-# AWS_DEFAULT_ACL = 'public-read'
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-# AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-# # s3 static settings
-# AWS_LOCATION = 'static'
-# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_DEFAULT_ACL = None
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+# s3 static settings
+STATIC_LOCATION = 'static'
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, STATIC_LOCATION)
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+STATICFILES_STORAGE = 'brenda_maxi.storage_backends.StaticStorage'
+# s3 public media settings
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+DEFAULT_FILE_STORAGE = 'brenda_maxi.storage_backends.PublicMediaStorage'
+# s3 private media settings
+PRIVATE_MEDIA_LOCATION = 'private'
+PRIVATE_FILE_STORAGE = 'brenda_maxi.storage_backends.PrivateMediaStorage'
 
 # else:
-#     STATIC_URL = '/static/'
-#     STATIC_ROOT = STATIC_ROOT = [BASE_DIR / 'staticfiles']
+# STATIC_URL = '/staticfiles/'
+# STATIC_ROOT = (str(BASE_DIR.joinpath('staticfiles')),)
+# MEDIA_URL = '/mediafiles/'
+# MEDIA_ROOT = (str(BASE_DIR.joinpath('mediafiles')),)
 
 # STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
-#
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = str(BASE_DIR / 'media')
-#
-# STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
-
-# STATIC_URL = '/static/'
-# STATIC_ROOT = [BASE_DIR / 'staticfiles']
-#
-# STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
-#
-# MEDIA_ROOT = str(BASE_DIR / 'media')
-# MEDIA_URL = '/images/'
 
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
