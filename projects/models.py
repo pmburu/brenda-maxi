@@ -11,7 +11,7 @@ the table with a project name and project feature image.
 
 class Project(models.Model):
     project_name = models.CharField(max_length=200, blank=False, null=False)
-    project_feature_image = models.ImageField(
+    project_feature_image = models.FileField(
         upload_to='images/projects/feature_image'
     )
 
@@ -43,7 +43,7 @@ class ProjectDetail(models.Model):
     project_detail_description = models.TextField(
         null=False, blank=False
     )
-    home_hero_image = models.ImageField(
+    home_hero_image = models.FileField(
         upload_to='images/projects/hero'
     )
 
@@ -77,7 +77,7 @@ It becomes a nested data. In that one project has one or many images.
 
 
 class ProjectGallery(models.Model):
-    image = models.ImageField(upload_to=upload_project_detail_images)
+    image = models.FileField(upload_to=upload_project_detail_images)
     project_detail = models.ForeignKey(
         ProjectDetail,
         on_delete=models.CASCADE,
